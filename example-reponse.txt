@@ -1,0 +1,179 @@
+- GET: /api/pipeline/get-pipelines
+{
+    "pipelineCode": "{uuid}",
+    "pipelineName": "ABC",
+    "stages": [
+        {
+            "stageName": "ABC1",
+            "stageCode": "{uuid}",
+            "state": "pass"
+        },
+        {
+            "stageName": "ABC2",
+            "stageCode": "{uuid}",
+            "state": "pass"
+        },
+        {
+            "stageName": "ABC3",
+            "stageCode": "{uuid}",
+            "state": "pass"
+        },
+        {
+            "stageName": "ABC4",
+            "stageCode": "{uuid}",
+            "state": "pass"
+        },
+        {
+            "stageName": "ABC5",
+            "stageCode": "{uuid}",
+            "state": "pass"
+        },
+        {
+            "stageName": "ABC6",
+            "stageCode": "{uuid}",
+            "state": "pass"
+        }
+    ]
+}
+
+- POST: /api/pipeline/add-pipeline
+{
+    "pipelineName": "",
+    "artifacts": [
+        {
+            "artifactName": "",
+            "path": "android-release.apk"
+        }
+    ],
+    "stage": [
+        {
+            "stageName": "",
+            "tasks": [
+                {
+                    "taskName": "build apk",
+                    "taskDescription": "",
+                    "exec": "flutter build android --release"
+                }
+            ]
+        }
+    ]
+}
+
+- POST: /api/pipeline/start-pipeline
+- POST: /api/pipeline/stop-pipeline
+- POST: /api/pipeline/resume-pipeline
+{
+    "pipelineCode": "{uuid}",
+}
+
+
+- GET: /api/pipeline/get-pipelines-history
+[
+    {
+        "pipelineCode": "",
+        "pipelineName": "",
+        "state": ""
+    },
+    {
+        "pipelineCode": "",
+        "pipelineName": "",
+        "state": ""
+    },
+    {
+        "pipelineCode": "",
+        "pipelineName": "",
+        "state": ""
+    }
+]
+
+- POST: /api/pipeline/stage/stop-stage
+- POST: /api/pipeline/stage/resume-stage
+{
+    "stageCode": "{uuid}",
+}
+
+- WS: /ws/pipeline/get-pipeline-detail
+{
+    "pipelineCode": "{uuid}",
+    "pipelineName": "ABC",
+    "stages": [
+        {
+            "stageName": "ABC1",
+            "stageCode": "{uuid}",
+            "state": "pass",
+            "tasks": [
+                {
+                    "taskCode": "{uuid}",
+                    "taskName": "",
+                    "state": "",
+                    "output": ""
+                }
+            ]
+        },
+        {
+            "stageName": "ABC2",
+            "stageCode": "{uuid}",
+            "state": "pass",
+            "tasks": [
+                {
+                    "taskCode": "{uuid}",
+                    "taskName": "",
+                    "state": "",
+                    "output": ""
+                }
+            ]
+        },
+        {
+            "stageName": "ABC3",
+            "stageCode": "{uuid}",
+            "state": "pass",
+            "tasks": [
+                {
+                    "taskCode": "{uuid}",
+                    "taskName": "",
+                    "state": "",
+                    "output": ""
+                }
+            ]
+        },
+        {
+            "stageName": "ABC4",
+            "stageCode": "{uuid}",
+            "state": "pass",
+            "tasks": [
+                {
+                    "taskCode": "{uuid}",
+                    "taskName": "",
+                    "state": "",
+                    "output": ""
+                }
+            ]
+        },
+        {
+            "stageName": "ABC5",
+            "stageCode": "{uuid}",
+            "state": "pass",
+            "tasks": [
+                {
+                    "taskCode": "{uuid}",
+                    "taskName": "",
+                    "state": "",
+                    "output": ""
+                }
+            ]
+        },
+        {
+            "stageName": "ABC6",
+            "stageCode": "{uuid}",
+            "state": "pass",
+            "tasks": [
+                {
+                    "taskCode": "{uuid}",
+                    "taskName": "",
+                    "state": "",
+                    "output": ""
+                }
+            ]
+        }
+    ]
+}
